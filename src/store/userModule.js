@@ -7,7 +7,7 @@ export const userModule = {
             id: '',
             name: '',
             gender: '',
-            music_ganre: 'Не определился',
+            music_ganre: 'Не выбрал',
             mail: '',
             login: '',
             pass: '',
