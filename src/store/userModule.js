@@ -83,7 +83,7 @@ export const userModule = {
                 .then((userCredential) => {
                     // Signed in 
                     const user = userCredential.user;
-                    console.log(user)
+                    console.log(user, auth)
                     state.sign_in = true;
                     // ...
                 })

@@ -9,6 +9,7 @@ import EditPost from '@/views/EditPost.vue'
 import EditPostCompleted from '@/views/CompletedAction/EditPostCompleted.vue'
 import EditPostCancel from '@/views/CompletedAction/EditPostCancel.vue'
 import AddUserComplete from '@/views/CompletedAction/AddUserComplete.vue'
+import AddPostComplete from '@/views/CompletedAction/AddPostComplete.vue'
 
 const routes = [
   {
@@ -60,6 +61,11 @@ const routes = [
     path: '/AddUserComplete',
     name: 'AddUserComplete',
     component: AddUserComplete,
+  },
+  {
+    path: '/AddPostComplete',
+    name: 'AddPostComplete',
+    component: AddPostComplete,
   },
 ]
 

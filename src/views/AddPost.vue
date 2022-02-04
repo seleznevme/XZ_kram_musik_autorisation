@@ -20,7 +20,7 @@
             <add-file />       
           </div>          
           <div class="btn_submit">
-            <form-submit @click="$store.commit('add_post')"  
+            <form-submit @click="$store.commit('add_post'), $router.push('/AddPostCompleted')"  
             custom_value = "Добавить"/>
           </div>
         </div>
