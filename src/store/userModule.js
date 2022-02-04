@@ -1,3 +1,5 @@
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 export const userModule = {
     state: () => ({
         user_list: [],
@@ -11,7 +13,12 @@ export const userModule = {
             pass: '',
             check_pass: '',
             about: '',
-        }
+        },
+        user_in: {
+            mail: '',
+            pass: ''
+        },
+        sign_in: false
     }),
     mutations: {
         user_name(state, name) {
@@ -38,10 +45,29 @@ export const userModule = {
         user_about(state, about) {
             state.user.about = about;
         },
+        user_mail_in(state, mail) {
+            state.user_in.mail = mail;
+        },
+        user_pass_in(state, pass) {
+            state.user_in.pass = pass;
+        },
         add_user(state) {
-            state.user.id = Date.now()
             state.user_list.push(Object.assign({}, state.user));
-            console.log(state.user_list)
+            const auth = getAuth();
+            createUserWithEmailAndPassword(auth, state.user.mail, state.user.pass)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    console.log(user)
+                    // ...
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.log(errorCode);
+                    console.log(errorMessage);
+                    // ..
+                });
             state.user.name = ''
             state.user.gender = ''
             state.user.music_ganre = 'Не определился'
@@ -50,7 +76,27 @@ export const userModule = {
             state.user.pass = ''
             state.user.check_pass = ''
             state.user.about = ''
+        },
+        in_user(state) {
+            const auth = getAuth();
+            signInWithEmailAndPassword(auth, state.user_in.mail, state.user_in.pass)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    console.log(user)
+                    state.sign_in = true;
+                    // ...
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.log(errorCode);
+                    console.log(errorMessage);
+                    // ..
+                });
+            state.user_in.mail = ''
+            state.user_in.pass = ''
         }
     },
-    
+
 }

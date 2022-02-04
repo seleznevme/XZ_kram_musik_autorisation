@@ -18,7 +18,12 @@
           <div class="add_img">
             <span>Прикрепить изображение</span>
             <add-file />       
-          </div>          
+          </div>
+          <div class="btn_submit">
+            <form-submit
+            @click="$router.push('/EditPostCancel')"  
+            custom_value = "Отменить изменения"/>
+          </div>         
           <div class="btn_submit">
             <form-submit
             @click="$store.commit('add_post_edit'), $router.push('/EditPostCompleted')"  

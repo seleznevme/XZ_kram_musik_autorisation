@@ -48,7 +48,7 @@
             :modelValue="$store.state.users.user.about"
             @update:modelValue="(about) => this.$store.commit('user_about', about)"/>
           <div class="btn_group">
-            <form-submit @click="$store.commit('add_user')" custom_value="Реггистрация" />
+            <form-submit @click="$store.commit('add_user'), $router.push('/AddUserComplete')" custom_value="Регистрация" />
           </div>
         </div>
       </form>

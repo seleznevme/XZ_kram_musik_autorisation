@@ -60,7 +60,7 @@ export const postModule = {
         copy_post_edit (state, id) {
             state.copy_post_edit = '';
             const index = state.post_list.findIndex(n => n.id == id);
-            state.copy_post_edit = state.post_list[index];            
+            state.copy_post_edit = Object.assign({}, state.post_list[index])            
         },
         post_edit_title(state, title) {
             state.copy_post_edit.title = title;

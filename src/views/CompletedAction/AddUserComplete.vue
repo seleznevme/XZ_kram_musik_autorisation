@@ -2,15 +2,12 @@
   <cover-main>
     <div class="cover_post">
       <div class="post_title">
-        <span>Пост отредактирован</span>
+        <span>Пользователь добавлен</span>
       </div>      
       <div class="btn_group">
         <post-button
         button_name = "Главная"
-        @click="$router.push('/')" />          
-        <post-button
-        button_name = "Просмотр"
-        @click="$router.push('/PostPage/' + $store.state.posts.copy_post_edit.id)"/>
+        @click="$router.push('/')" />        
       </div>
     </div>
     
@@ -19,7 +16,7 @@
 
 <script>
 export default {
-    name: 'EditPost'
+    name: 'AddUserComplete'
 };
 </script>
 

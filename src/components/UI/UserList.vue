@@ -3,7 +3,7 @@
     <span>Пользователи сайта:</span>
     <ul>
       <li v-for="index in $store.state.users.user_list" :key="index.login">
-        {{ index.login }}
+        {{ index.mail }}
       </li>
     </ul>
   </div>

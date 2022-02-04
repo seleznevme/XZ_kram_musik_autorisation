@@ -2,7 +2,7 @@
   <cover-main>
     <div class="cover_post">
       <div class="post_title">
-        <span>Пост отредактирован</span>
+        <span>Изменения отменены</span>
       </div>      
       <div class="btn_group">
         <post-button
@@ -19,7 +19,7 @@
 
 <script>
 export default {
-    name: 'EditPost'
+    name: 'EditPostCancel'
 };
 </script>
 

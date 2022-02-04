@@ -7,6 +7,8 @@ import PostPage from '@/views/news/PostPage.vue'
 import DeletePostCompleted from '@/views/CompletedAction/DeletePostCompleted.vue'
 import EditPost from '@/views/EditPost.vue'
 import EditPostCompleted from '@/views/CompletedAction/EditPostCompleted.vue'
+import EditPostCancel from '@/views/CompletedAction/EditPostCancel.vue'
+import AddUserComplete from '@/views/CompletedAction/AddUserComplete.vue'
 
 const routes = [
   {
@@ -48,6 +50,16 @@ const routes = [
     path: '/EditPostCompleted',
     name: 'EditPostCompleted',
     component: EditPostCompleted,
+  },
+  {
+    path: '/EditPostCancel',
+    name: 'EditPostCancel',
+    component: EditPostCancel,
+  },
+  {
+    path: '/AddUserComplete',
+    name: 'AddUserComplete',
+    component: AddUserComplete,
   },
 ]
 
