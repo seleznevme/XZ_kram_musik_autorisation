@@ -1,4 +1,4 @@
-# XZ_kram_musik_autorisation
+# kram_music_production
 
 ## Project setup
 ```
